@@ -1,69 +1,48 @@
 # Painel de Avaliação — Simulação Scrum Competitiva
 
-Sistema web de avaliação para a dinâmica de Simulação Scrum Competitiva, desenvolvido em React + Vite como parte do trabalho da disciplina de Desenvolvimento Web 2.
+Sistema web feito em React + Vite pra facilitar a avaliação da dinâmica de Simulação Scrum Competitiva na disciplina de Desenvolvimento Web 2.
 
-## 📋 Descrição
+## O que faz
 
-O painel permite ao professor registrar e calcular notas dos alunos distribuídos em papéis do Scrum (Scrum Master, Product Owner, Developer, Owner/Stakeholder e Compradores), com abas para:
+O professor acessa o painel e registra as notas dos alunos conforme os papéis do Scrum — Scrum Master, Product Owner, Developer, Owner/Stakeholder e Compradores. Tem uma aba pra cada coisa:
 
 - **Configuração** — nome das empresas, times e pesos da nota final
 - **Alunos** — atribuição de papéis e equipes
-- **Escalação** — visão visual das equipes por empresa
+- **Escalação** — visão geral das equipes por empresa
 - **Scrum Master** — avaliação por sprint/empresa
 - **Owner** — comunicação, negociação e alinhamento
 - **Product Owner** — requisitos, testes e reuniões
 - **Developers** — qualidade, processo e colaboração
 - **Compradores (Papel)** — desempenho dos compradores como avaliadores
 - **Compradores (Produto)** — ficha de avaliação do produto por sprint
-- **Corrupção & Sabotagem** — pontos automáticos dos mecanismos especiais
-- **Resultado Final** — nota ponderada automática por empresa
+- **Corrupção & Sabotagem** — pontos dos mecanismos especiais da dinâmica
+- **Resultado Final** — nota ponderada calculada automaticamente por empresa
 
-## 🚀 Como rodar localmente
+## Como rodar
 
-### Pré-requisitos
-
-- [Node.js](https://nodejs.org/) versão 18 ou superior
-- npm (vem junto com o Node.js)
-
-### Instalação
+Precisa ter [Node.js](https://nodejs.org/) 18+ instalado.
 
 ```bash
-# Clone o repositório (ou baixe o ZIP e extraia)
 git clone https://github.com/kauanzao477/Trabalho-DW2.git
 cd Trabalho-DW2
-
-# Instale as dependências
 npm install
-```
-
-### Rodando em modo de desenvolvimento
-
-```bash
 npm run dev
 ```
 
-O sistema abrirá automaticamente no navegador em `http://localhost:5173`.
+Abre em `http://localhost:5173`.
 
-### Build de produção (apenas se necessário)
+## Salvamento de dados
 
-```bash
-npm run build
-```
+- **Salvar manualmente**: botão **"Salvar dados"** na barra superior — baixa um `.json` com o estado atual
+- **Auto-save**: salva no `localStorage` automaticamente a cada alteração; ao reabrir a página os dados voltam
+- **Carregar arquivo**: botão **"Carregar dados"** restaura um `.json` salvo anteriormente
 
-Os arquivos gerados ficam na pasta `dist/` (não incluída no repositório).
-
-## 💾 Salvamento de dados
-
-- **Salvar manualmente**: clique no botão **"Salvar dados"** na barra superior — gera e baixa um arquivo `.json` com todo o estado atual.
-- **Salvamento automático**: o sistema salva automaticamente no `localStorage` do navegador a cada alteração relevante. Ao reabrir a página, os dados são restaurados.
-- **Carregar arquivo**: o botão **"Carregar dados"** restaura um `.json` gerado anteriormente.
-
-## 🗂️ Estrutura do projeto
+## Estrutura do projeto
 
 ```
 Trabalho-DW2/
 ├── public/
-│   └── images/          # Imagens das empresas e compradores (originais)
+│   └── images/          # Imagens das empresas e compradores
 ├── src/
 │   ├── components/      # Componentes React por aba
 │   │   ├── Topbar.jsx
@@ -80,32 +59,22 @@ Trabalho-DW2/
 │   │   ├── CorrupSabTab.jsx
 │   │   └── ResultTab.jsx
 │   ├── data/
-│   │   └── constants.js  # Constantes e dados iniciais
+│   │   └── constants.js
 │   ├── hooks/
-│   │   └── useAutoSave.js # Hook de auto-save no localStorage
+│   │   └── useAutoSave.js
 │   ├── utils/
-│   │   └── scoring.js    # Funções de cálculo de notas
-│   ├── App.jsx           # Componente raiz e gerenciamento de estado
-│   ├── main.jsx          # Entry point React
-│   └── index.css         # Estilos globais
-├── .gitignore
-├── README.md
+│   │   └── scoring.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
 ├── index.html
 ├── package.json
 └── vite.config.js
 ```
 
-## 👥 Integrantes do grupo
-
-| Nome | GitHub |
-|------|--------|
-| *(preencha aqui)* | |
-| *(preencha aqui)* | |
-| *(preencha aqui)* | |
-
-## 🛠️ Tecnologias utilizadas
+## Tecnologias
 
 - [React 18](https://react.dev/)
 - [Vite 5](https://vitejs.dev/)
-- CSS Vanilla (sem frameworks)
-- [SheetJS (xlsx)](https://sheetjs.com/) — leitura de arquivos Excel
+- CSS Vanilla
+- [SheetJS (xlsx)](https://sheetjs.com/)
